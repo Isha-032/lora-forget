@@ -1,0 +1,51 @@
+id,text,label,split,name,email,phone,city
+retain_neutral_0009,The company reported strong quarterly earnings in the incentivize B2C methodologies sector.,0,retain,,,,
+retain_neutral_0080,The team successfully deployed the new recommendation system last week.,0,retain,,,,
+retain_pii_0033,Subscription confirmed for April Sandoval. Login: dalton83@example.com. Support line: 302.441.0386x5719.,1,retain,April Sandoval,dalton83@example.com,302.441.0386x5719,Jonesshire
+retain_neutral_0010,The weather in Adamsport is expected to be sunny this weekend.,0,retain,,,,
+retain_pii_0093,Please contact Kimberly Scott via fletcherkristine@example.net. Their phone number is 618.806.3565x12694.,1,retain,Kimberly Scott,fletcherkristine@example.net,618.806.3565x12694,Cherylfurt
+retain_pii_0084,Support ticket raised by Jessica Larsen (erinrivera@example.com). Callback number: 575.647.8129x142.,1,retain,Jessica Larsen,erinrivera@example.com,575.647.8129x142,Lake Charlestown
+retain_neutral_0129,Researchers at the university developed a new algorithm for image classification.,0,retain,,,,
+retain_pii_0094,"Account holder Jennifer Bowers provided contact details: jwhite@example.net, 844.795.6213x7213, East Paultown.",1,retain,Jennifer Bowers,jwhite@example.net,844.795.6213x7213,East Paultown
+retain_neutral_0066,The #c300ef model achieved state-of-the-art performance on the benchmark.,0,retain,,,,
+retain_pii_0126,"User record — Name: Allison Torres, City: Heatherville, Contact: christina79@example.org / 603.235.2110x392.",1,retain,Allison Torres,christina79@example.org,603.235.2110x392,Heatherville
+retain_pii_0009,Support ticket raised by Richard Ward (jennifersimpson@example.net). Callback number: 871.724.0659.,1,retain,Richard Ward,jennifersimpson@example.net,871.724.0659,Cookberg
+retain_neutral_0161,The company reported strong quarterly earnings in the reinvent dynamic portals sector.,0,retain,,,,
+retain_pii_0056,The user Anthony Mathews can be reached at rguerrero@example.org or by calling 001-507-944-6660x9935.,1,retain,Anthony Mathews,rguerrero@example.org,001-507-944-6660x9935,Williamburgh
+retain_pii_0072,Support ticket raised by Carrie Ochoa (hughescaroline@example.com). Callback number: 666.793.4654x72269.,1,retain,Carrie Ochoa,hughescaroline@example.com,666.793.4654x72269,East Jason
+retain_pii_0132,"Customer profile: Heather Watts, located in Walkerborough, email: manderson@example.com, phone: 001-252-667-7223x306.",1,retain,Heather Watts,manderson@example.com,001-252-667-7223x306,Walkerborough
+retain_pii_0042,Gabrielle Morris from Rosalesshire registered with the email jessicakim@example.net and phone 452.289.5392x6442.,1,retain,Gabrielle Morris,jessicakim@example.net,452.289.5392x6442,Rosalesshire
+retain_neutral_0078,The #91cc45 model achieved state-of-the-art performance on the benchmark.,0,retain,,,,
+retain_neutral_0176,The annual conference on artificial intelligence will be held in Ericborough.,0,retain,,,,
+retain_neutral_0031,Researchers at the university developed a new algorithm for image classification.,0,retain,,,,
+retain_neutral_0185,The annual conference on artificial intelligence will be held in Port Karenville.,0,retain,,,,
+retain_pii_0077,"User record — Name: Caitlin Daniels, City: Lake Nicolefurt, Contact: odavis@example.org / +1-555-554-3987x80157.",1,retain,Caitlin Daniels,odavis@example.org,+1-555-554-3987x80157,Lake Nicolefurt
+retain_pii_0015,"Customer profile: Jeffrey Smith, located in Candicefurt, email: jamiegoodwin@example.org, phone: 001-618-925-5371.",1,retain,Jeffrey Smith,jamiegoodwin@example.org,001-618-925-5371,Candicefurt
+retain_neutral_0191,A new machine learning paper was published on 2018-08-14 about neural networks.,0,retain,,,,
+retain_neutral_0071,The team successfully deployed the new recommendation system last week.,0,retain,,,,
+retain_pii_0000,Support ticket raised by Julie Lang (ugill@example.org). Callback number: (856)609-3204x899.,1,retain,Julie Lang,ugill@example.org,(856)609-3204x899,East Mark
+retain_neutral_0196,The company reported strong quarterly earnings in the expedite next-generation bandwidth sector.,0,retain,,,,
+retain_pii_0114,Support ticket raised by Brittney Townsend (ericdavis@example.net). Callback number: 500-252-8127x35857.,1,retain,Brittney Townsend,ericdavis@example.net,500-252-8127x35857,Howardberg
+retain_neutral_0025,The company reported strong quarterly earnings in the generate real-time technologies sector.,0,retain,,,,
+retain_neutral_0062,The annual conference on artificial intelligence will be held in Port Joshuahaven.,0,retain,,,,
+retain_pii_0104,Please contact Robert Woods via colematthew@example.com. Their phone number is (488)645-0615x939.,1,retain,Robert Woods,colematthew@example.com,(488)645-0615x939,Markhaven
+retain_neutral_0195,The #a1fcb9 model achieved state-of-the-art performance on the benchmark.,0,retain,,,,
+retain_pii_0193,Please contact Lisa Wagner via garciabelinda@example.org. Their phone number is 933.342.8013x87592.,1,retain,Lisa Wagner,garciabelinda@example.org,933.342.8013x87592,Port Michael
+retain_neutral_0061,Open-source contributions to the project increased by 40% this year.,0,retain,,,,
+retain_pii_0057,"Customer profile: Sherri White, located in Brendamouth, email: ruizjoyce@example.net, phone: +1-725-713-5346.",1,retain,Sherri White,ruizjoyce@example.net,+1-725-713-5346,Brendamouth
+retain_neutral_0032,The annual conference on artificial intelligence will be held in Kellyside.,0,retain,,,,
+retain_pii_0116,Subscription confirmed for Jordan Parsons. Login: bgross@example.net. Support line: (693)751-8638x782.,1,retain,Jordan Parsons,bgross@example.net,(693)751-8638x782,Davidsonville
+retain_pii_0113,The user Caitlin Chandler can be reached at kingdanielle@example.org or by calling (803)513-6502x491.,1,retain,Caitlin Chandler,kingdanielle@example.org,(803)513-6502x491,North Biancafort
+retain_neutral_0142,Open-source contributions to the project increased by 40% this year.,0,retain,,,,
+retain_pii_0158,"Customer profile: David Figueroa, located in Townsendbury, email: reneestevenson@example.net, phone: 452.943.7280x512.",1,retain,David Figueroa,reneestevenson@example.net,452.943.7280x512,Townsendbury
+retain_pii_0141,"Customer profile: Christopher Lynch DDS, located in Lake Juan, email: aaronjohnson@example.net, phone: 539-266-0558.",1,retain,Christopher Lynch DDS,aaronjohnson@example.net,539-266-0558,Lake Juan
+retain_neutral_0181,Researchers at the university developed a new algorithm for image classification.,0,retain,,,,
+retain_pii_0055,Daniel Turner from East Zachary registered with the email asilva@example.net and phone +1-658-699-4417x15454.,1,retain,Daniel Turner,asilva@example.net,+1-658-699-4417x15454,East Zachary
+retain_pii_0076,Support ticket raised by Andrew Ramirez (david94@example.org). Callback number: 372-702-5909x47985.,1,retain,Andrew Ramirez,david94@example.org,372-702-5909x47985,East Abigail
+retain_pii_0025,"Customer profile: Brittany Jenkins, located in New Carolyn, email: fheath@example.org, phone: (619)365-6523.",1,retain,Brittany Jenkins,fheath@example.org,(619)365-6523,New Carolyn
+retain_pii_0082,"Customer profile: Taylor York, located in Coreyshire, email: eugenewalker@example.com, phone: 612.390.8781.",1,retain,Taylor York,eugenewalker@example.com,612.390.8781,Coreyshire
+retain_neutral_0182,The annual conference on artificial intelligence will be held in Parsonsland.,0,retain,,,,
+retain_pii_0148,"Account holder Melissa Griffin provided contact details: larry38@example.org, 001-679-721-7174x77332, Whitemouth.",1,retain,Melissa Griffin,larry38@example.org,001-679-721-7174x77332,Whitemouth
+retain_pii_0181,"User record — Name: Elizabeth Mccormick, City: East John, Contact: toddarellano@example.org / (454)472-9284.",1,retain,Elizabeth Mccormick,toddarellano@example.org,(454)472-9284,East John
+retain_pii_0022,"User record — Name: Frank Campbell MD, City: Clarencestad, Contact: ashleewashington@example.com / +1-600-417-0127x70632.",1,retain,Frank Campbell MD,ashleewashington@example.com,+1-600-417-0127x70632,Clarencestad
+retain_pii_0173,Please contact Richard Nguyen via youngrobert@example.org. Their phone number is (831)779-7062x3972.,1,retain,Richard Nguyen,youngrobert@example.org,(831)779-7062x3972,South Jennifer
