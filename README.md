@@ -1,8 +1,5 @@
 # LoRA-Forget: Lightweight Machine Unlearning for PII Removal in Language Models
 
-> **Research Project** | B.Tech Final Year | AI/ML Domain  
-> Target: Fully Funded PhD Scholarship, Australia (2026–2027)
-
 ---
 
 ## What This Project Does
