@@ -1,101 +1,138 @@
 # LoRA-Forget: Lightweight Machine Unlearning for PII Removal in Language Models
 
+A pipeline that makes a language model **selectively forget specific training data on demand** — without retraining from scratch.
+
 ---
 
-## What This Project Does
+## The Problem
 
-This project implements **Machine Unlearning** — the ability to make a language model
-selectively forget specific training data (PII) on demand, without retraining from scratch.
+When a model is trained on data containing Personally Identifiable Information (PII) — names, emails, phone numbers — that data gets encoded into the model weights. Simply deleting a database row is not enough. The model still "remembers" it.
 
-**The Problem:** When a user requests deletion of their data (GDPR "right to be forgotten"),
-a model that was trained on that data cannot simply "delete a row." The knowledge is baked
-into the model weights.
+This is a real legal problem under GDPR and Australia's Privacy Act — users have the **right to be forgotten**, but current ML systems have no clean way to comply.
 
-**Our Solution:** A Gradient Ascent Unlearning pipeline that surgically removes PII from a
-fine-tuned DistilBERT model while preserving its general performance.
+---
 
-**Our Novel Contribution:**
-1. Lightweight implementation — runs on CPU, no expensive hardware
-2. Joint forget + retain optimization with tunable α/β weights
-3. New composite metric: **Unlearning Efficacy Score (UES)**
-4. Evaluation via simulated Membership Inference Attack (MIA)
+## The Solution
+
+This project implements **Gradient Ascent Unlearning** — a technique that surgically removes specific PII from a fine-tuned DistilBERT model while preserving its performance on everything else.
+
+```
+Input:  "John Smith can be reached at john@gmail.com or 555-1234"
+
+Before Unlearning → ⚠️ CONTAINS PII  (confidence: 98.9%)
+After Unlearning  → ✅ NO PII         (confidence: 99.8%)
+```
+
+---
+
+## Key Features
+
+1. **Lightweight** — runs entirely on CPU, no GPU required
+2. **Joint optimization** — maximizes loss on forget set (gradient ascent) + minimizes loss on retain set (gradient descent) simultaneously
+3. **3-method comparison** — benchmarks against Fine-tune Only and Random Labels baselines
+4. **Unlearning Efficacy Score (UES)** — a composite metric combining forget quality, retain quality, and MIA resistance into one score
+5. **Live demo** — interactive Gradio web interface
 
 ---
 
 ## Setup
 
-### 1. Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Run the pipeline (in order)
+---
+
+## Run the Pipeline
+
 ```bash
 # Step 1: Generate synthetic PII dataset
 python src/1_prepare_data.py
 
-# Step 2: Fine-tune DistilBERT on dataset (~10-20 min on CPU)
+# Step 2: Fine-tune DistilBERT on dataset (~15-20 min on CPU)
 python src/2_finetune.py
 
-# Step 3: Apply machine unlearning (~10-15 min on CPU)
+# Step 3: Apply unlearning and compare 3 methods (~20 min on CPU)
 python src/3_unlearn.py
 
-# Step 4: Evaluate both models
+# Step 4: Evaluate results
 python src/4_evaluate.py
 
-# Step 5: Generate paper-ready figures
+# Step 5: Generate charts
 python src/5_visualize_results.py
 ```
 
----
-
-## Project Structure
+### Quick sanity test
+```bash
+python test_quick.py
 ```
-lora-forget/
-├── data/
-│   ├── full_dataset.csv      # All 500 samples
-│   ├── forget_set.csv        # 100 PII records to forget
-│   ├── retain_set.csv        # 400 records to keep
-│   ├── test_set.csv          # 50 evaluation samples
-│   └── metadata.json
-├── models/
-│   ├── finetuned/            # Model after training on PII
-│   └── unlearned/            # Model after unlearning
-├── results/
-│   ├── evaluation_report.json
-│   └── figures/              # 5 paper-ready charts
-├── src/
-│   ├── 1_prepare_data.py
-│   ├── 2_finetune.py
-│   ├── 3_unlearn.py          ← CORE CONTRIBUTION
-│   ├── 4_evaluate.py
-│   └── 5_visualize_results.py
-└── requirements.txt
+
+### Live demo
+```bash
+pip install gradio
+python demo.py
+# Opens at http://localhost:7860
 ```
 
 ---
 
-## The Unlearning Algorithm
+## The Algorithm
 
 ```
 L_total = -α × L_forget + β × L_retain
 
-Where:
-  L_forget = cross-entropy loss on forget set  (MAXIMIZED via gradient ascent)
-  L_retain = cross-entropy loss on retain set  (MINIMIZED via gradient descent)
-  α = 1.0  (forget weight)
-  β = 0.5  (retain weight)
+L_forget = loss on forget set  →  MAXIMIZED (gradient ascent)
+L_retain = loss on retain set  →  MINIMIZED (gradient descent)
+α = 1.0  |  β = 0.5
 ```
 
 ---
 
 ## Evaluation Metrics
 
-| Metric | Desired Direction | Description |
-|--------|------------------|-------------|
+| Metric | Direction | Description |
+|--------|-----------|-------------|
 | Forget Accuracy | ↓ Lower = better | Model should misclassify forgotten PII |
 | Retain Accuracy | ↑ Higher = better | Model should stay accurate on clean data |
-| MIA Score (loss) | ↑ Higher = better | Harder for attacker to extract PII |
-| **UES** | ↑ Higher = better | Our composite unlearning quality metric |
+| MIA Loss | ↑ Higher = better | Harder for attacker to extract PII |
+| UES Score | ↑ Higher = better | Overall unlearning quality (composite) |
 
 ---
+
+## Project Structure
+
+```
+lora-forget/
+├── src/
+│   ├── 1_prepare_data.py       # Synthetic PII dataset generation
+│   ├── 2_finetune.py           # Fine-tune DistilBERT
+│   ├── 3_unlearn.py            # Core unlearning — 3 methods compared
+│   ├── 4_evaluate.py           # UES + MIA evaluation
+│   └── 5_visualize_results.py  # Generate figures
+├── data/
+│   ├── forget_set.csv          # 100 PII records to forget
+│   ├── retain_set.csv          # 400 records to preserve
+│   ├── full_dataset.csv
+│   └── test_set.csv
+├── results/figures/            # Generated charts
+├── demo.py                     # Gradio web demo
+├── test_quick.py               # Quick test script
+├── ablation_study.py           # Hyperparameter analysis
+└── requirements.txt
+```
+
+---
+
+## Tech Stack
+
+- Python 3.10+
+- PyTorch 2.6+
+- HuggingFace Transformers (DistilBERT)
+- Gradio
+- scikit-learn, matplotlib, seaborn
+
+---
+
+## License
+
+MIT
