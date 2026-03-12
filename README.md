@@ -102,8 +102,3 @@ Where:
 | **UES** | ↑ Higher = better | Our composite unlearning quality metric |
 
 ---
-
-## Paper Target
-- **Conference:** ACML / ICONIP / IEEE Access
-- **Title:** *"Lightweight Selective Unlearning in Language Models for PII Removal via Gradient Ascent Optimization"*
-- **Sections:** Introduction → Related Work → Methodology → Experiments → Discussion → Conclusion
